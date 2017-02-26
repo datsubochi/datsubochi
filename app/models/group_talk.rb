@@ -1,0 +1,2 @@
+class GroupTalk < ApplicationRecord
+end
