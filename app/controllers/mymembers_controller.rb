@@ -1,0 +1,2 @@
+class MymembersController < ApplicationController
+end
