@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
-	before_action:set_note,only:[:show,:edit,:update,:destroy]
+	before_action:set_mymember,only:[:show,:edit,:update,:destroy]
 
-  def
+  layout 'mymemberslayouts'
 
   def new
   	@mymember = Mymember.new

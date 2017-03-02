@@ -1,7 +1,7 @@
-class PagesController < ApplicationController
+class LivesController < ApplicationController
   before_action:set_note,only:[:show,:edit,:update,:destroy]
 
- 
+ layout 'liveslayouts'
 
   def new
   	@live = Live.new
