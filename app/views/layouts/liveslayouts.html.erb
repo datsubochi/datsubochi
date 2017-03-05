@@ -1,4 +1,15 @@
-<header class="navbar">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Datsubochi</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header class="navbar">
 	  <div class="container">
 	    <div class="logo">脱ぼっち☆彡</div>
 	    <ul class="header-right">
@@ -10,3 +21,19 @@
 	    </ul>
 	  </div>
 	</header>
+  		<%= yield %>
+  </body>	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

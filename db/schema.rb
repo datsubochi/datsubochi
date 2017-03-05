@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20170226090010) do
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "body"
+    t.text     "body"
     t.string   "place"
     t.datetime "date"
   end
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20170226090010) do
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "body"
+    t.text     "body"
     t.string   "image"
   end
 
