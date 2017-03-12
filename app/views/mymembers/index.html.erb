@@ -1,9 +1,9 @@
 <h1>記事一覧</h1>
-<% @mymember.each do |mymember| %>
+<% @mymembers.each do |mymember| %>
 
 <p><%= mymember.title %></p>
-<p><%= mymember.place %></p>
-<p><%= mymember.date.to_s(:published_on) %></p>
+<p><%= mymember.image %></p>
 <p><%= mymember.body %></p>
 <p></p>
 <% end %>
+<%= paginate @mymembers %>

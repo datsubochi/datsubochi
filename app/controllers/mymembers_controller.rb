@@ -22,7 +22,8 @@ class MymembersController < ApplicationController
   end
 
   def index
-  	@mymember = Mymember.all
+  	@mymembers = Mymember.all
+    @mymembers = Mymember.page(params[:page])
   end
 
   def show
@@ -30,17 +31,31 @@ class MymembersController < ApplicationController
   end
   	
   def edit
+
   end
 
   def update
-  	if @mymember.update(mymember_params)
-  		redirect_to @mymember
-  	else render :edit
-  	
-  	end	
+    if params[:mymember][:image].blank?
+    	if @mymember.update(mymember_paramsex)
+    		redirect_to @mymember
+    	else 
+        render :edit
+    	end	
+    else
+      if @mymember.update(mymember_params)
+        redirect_to @mymember
+      else 
+        render :edit
+      end 
+    end
   end
 
   def destroy
+    if @mymember.destroy
+      redirect_to mymembers_path
+    else 
+      render :show
+    end  
   end	
 
   private
@@ -49,7 +64,11 @@ class MymembersController < ApplicationController
   	end	
 
     def mymember_params
-    	params.require(:mymember).permit(:title,:body,:image,:user_id)
+    	params.require(:mymember).permit(:title,:body,:image)
     end	
+
+    def mymember_paramsex
+      params.require(:mymember).permit(:title,:body)
+    end 
 
 end

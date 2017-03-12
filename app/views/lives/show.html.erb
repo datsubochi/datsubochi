@@ -10,5 +10,5 @@
 <h2>extra</h2>
 <li><%= @live.body %></li>
 
-<li><%=link_to "編集", edit_mymember_path(@live.id) %></li>
-<li><%=link_to "削除", mymember_path(@live.id,method:'delete' %></li>
+<li><%=link_to "編集", edit_life_path(@live.id) %></li>
+<li><%= link_to "削除", life_path(@live.id), method: "delete", class: "btn destroy-btn", "data-confirm" => "本当に削除しますか？" %></li>
