@@ -1,0 +1,24 @@
+<h2>title</h2>
+<li><%= @mymember.title %></li>
+
+<h2>image</h2>
+<li><%= @mymember.image %></li>
+<tbody>
+
+    <tr>
+      <% if !@mymember.image.blank? %>
+    　<td><%=  image_tag @mymember.image%></td>
+    　<% else %>
+    　<td><%= image_tag 'noimage.gif' %></td>
+    　<% end %>
+      
+    </tr>
+ 
+  
+</tbody>
+
+<h2>extra</h2>
+<li><%= @mymember.body %></li>
+
+<li><%=link_to "編集", edit_mymember_path(@mymember.id) %></li>
+<li><%= link_to "削除", mymember_path(@mymember.id), method: "delete", class: "btn destroy-btn", "data-confirm" => "本当に削除しますか？" %></li>

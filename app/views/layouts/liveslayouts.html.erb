@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Datsubochi</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header class="navbar">
+	  <div class="container">
+	    <div class="logo">脱ぼっち☆彡</div>
+	    <ul class="header-right">
+	      <li><%= link_to '新規投稿',new_life_path %></li>
+	      <li><%= link_to '募集一覧',lives_path %></li>
+	      <li>マイページ</li>
+	      <li>ログアウト</li>
+
+	    </ul>
+	  </div>
+	</header>
+  		<%= yield %>
+  </body>	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
