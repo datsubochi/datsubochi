@@ -4,12 +4,13 @@
 	<%= f.text_field :title %>
 
 	
-	<h3>時間</h3>
-	<%= f.datetime_select :date %>
 	
 	<h3>備考</h3>
 	<%= f.text_area :body %>
 
-<%= f.submit "送信" %>
+	<li><%= f.label :image %></li>
+	<%= f.file_field :image %> 
+
+	<%= f.submit "送信" %>
 
 <% end %>

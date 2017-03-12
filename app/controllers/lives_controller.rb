@@ -1,4 +1,5 @@
 class LivesController < ApplicationController
+	 layout 'liveslayouts.html.erb'
 	 before_action :set_live,only:[:show,:edit,:update,:destroy]
 
   def top
@@ -18,7 +19,8 @@ class LivesController < ApplicationController
   end
 
   def index
-  	@live = Live.all
+  	@lives = Live.all
+  	@lives = Live.page(params[:page])
   end
 
   def show
@@ -37,6 +39,10 @@ class LivesController < ApplicationController
   end
 
   def destroy
+  	if @live.destroy
+  	redirect_to @live
+  	else render :edit
+  	end
   end	
 
   private
@@ -45,7 +51,7 @@ class LivesController < ApplicationController
   	end	
 
     def live_params
-    	params.require(:live).permit(:title,:body,:date,:place,:user_id)
+    	params.require(:live).permit(:title,:body,:date,:place)
     end	
 
 end
