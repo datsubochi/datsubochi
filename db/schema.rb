@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
-ActiveRecord::Schema.define(version: 20170226063759) do
+ActiveRecord::Schema.define(version: 20170309132535) do
 
   create_table "group_talks", force: :cascade do |t|
     t.integer  "community_id"
@@ -22,9 +20,11 @@ ActiveRecord::Schema.define(version: 20170226063759) do
     t.datetime "updated_at",   null: false
   end
 
-ActiveRecord::Schema.define(version: 20170220122900) do
-
-ActiveRecord::Schema.define(version: 20170226090010) do
+  create_table "joins", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
 
   create_table "lives", force: :cascade do |t|
     t.integer  "user_id"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 20170226090010) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
+    t.string   "sex"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
