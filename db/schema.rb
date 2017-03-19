@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20170309132535) do
 
   create_table "group_talks", force: :cascade do |t|
@@ -21,20 +20,18 @@ ActiveRecord::Schema.define(version: 20170309132535) do
     t.datetime "updated_at",   null: false
   end
 
-
   create_table "joins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
   end
 
-
   create_table "lives", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text     "body"
+    t.string   "body"
     t.string   "place"
     t.datetime "date"
   end
@@ -44,7 +41,7 @@ ActiveRecord::Schema.define(version: 20170309132535) do
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text     "body"
+    t.string   "body"
     t.string   "image"
   end
 
