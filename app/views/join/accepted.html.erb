@@ -1,0 +1,5 @@
+<h1>メンバー一覧</h1>
+
+<% @joins.each do |join| %>
+	<li><%= link_to join.user.name,user_path(join.user.id) %></li>
+<% end %>	

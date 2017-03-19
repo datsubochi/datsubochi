@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+
+  root 'user#top'
+  resources :user ,only:[:edit,:updata,:show,:index]
   devise_for :users
+
+  resources  :mymembers
+
   resources :lives do
   	resources :join,only: [:create,:destroy] do
   		member do 
@@ -8,9 +14,10 @@ Rails.application.routes.draw do
   		end	
   	end
   end
-  post '/joins/:id/accepted' => 'join#accept', as: :join_accept
-  resources  :mymembers
+
+  post '/joins/:id/accept' => 'join#accept', as: :join_accept
+  
   
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
 end

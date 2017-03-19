@@ -11,6 +11,7 @@ class LivesController < ApplicationController
 
   def create
   	@live = Live.new(live_params)
+    @live.user_id = current_user.id
   	if @live.save
 	  	redirect_to @live
 	else
@@ -24,7 +25,8 @@ class LivesController < ApplicationController
   end
 
   def show
-    
+    @join = Join.find_by(user_id: current_user.id, life_id: params[:id])
+
   end
   	
   def edit
