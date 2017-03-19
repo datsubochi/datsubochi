@@ -10,5 +10,15 @@
 <h2>extra</h2>
 <li><%= @live.body %></li>
 
-<li><%=link_to "編集", edit_life_path(@live.id) %></li>
-<li><%= link_to "削除", life_path(@live.id), method: "delete", class: "btn destroy-btn", "data-confirm" => "本当に削除しますか？" %></li>
+if @live
+
+<%# if @join.user_id == current_user.id %>
+<li><%#=link_to "編集", edit_life_path(@live.id) %></li>
+<li><%#= link_to "削除", life_path(@live.id), method: "delete", class: "btn destroy-btn", "data-confirm" => "本当に削除しますか？" %></li>
+<%# else %>
+<li><%#= link_to "コミュニティに参加する", life_joins_path %></li>
+<li>
+	<%#if 
+
+		<%#= link_to "コミュニティを退会する", life_join_path(@join.id) %></li>
+<%# end %> 
