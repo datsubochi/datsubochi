@@ -1,0 +1,27 @@
+<%= form_for(@user) do |f| %>
+
+	<h3>氏名</h3>
+		<%= f.text_field :name %>
+
+	<h3>居住地</h3>
+		<%= f.text_field :city %>
+	
+	<h3>性別</h3>
+		<label><%= f.radio_button :sex, "1" %>男</label>
+  　　	<label><%= f.radio_button :sex, "2" %>女</label>
+	
+	<h3>好きなグループ</h3>
+		<%= f.text_field :favorite_group %>
+
+	<h3>推しメン</h3>
+		<%= f.text_field :favorite_member %>
+
+	<h3>ファン歴</h3>
+		<%= f.number_field :fan_career %>
+
+	<h3>メッセージ<h3>
+		<%= f.text_area :body %>	
+
+<%= f.submit "変更" %>
+
+<% end %>

@@ -1,0 +1,6 @@
+<h1>作成記事一覧</h1>
+	<ul>
+		<% @lives.each do |lives| %>
+			<li><%= link_to lives.title, life_path(lives.id) %></li>
+		<% end %>	
+	</ul>
