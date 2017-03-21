@@ -10,11 +10,32 @@
 <h2>extra</h2>
 <li><%= @live.body %></li>
 
+<% @talks.each do |talk| %>
+	<div class=""><%= talk.body %></div>
+<% end %>
+
+<% if !@join.blank? %>
+	<% if @join.accepted  %>
+		<h2>コメントを書く</h2> 
+		<%= form_for([@live,GroupTalk.new]) do |f| %> 
+			<div > 
+				<%= f.label :body %><br /> 
+				<%= f.text_area :body %> 
+			</div> 
+			<div> 
+				<%= f.submit "送信☆彡" %> 
+			</div> 
+		<% end %>
+	<% end %>	 
+<% end %>
+
+
 
 
 <% if @live.user_id == current_user.id %>
 	<li><%=link_to "編集", edit_life_path(@live.id) %></li>
 	<li><%= link_to "削除", life_path(@live.id), method: "delete", class: "btn destroy-btn", "data-confirm" => "本当に削除しますか？" %></li>
+	<li><%= link_to "申請中一覧",waiting_life_joins_path(params[:id]) %></li>
 <% else %>
 
 	<li><% if @join.blank? %>

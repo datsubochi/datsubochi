@@ -1,5 +1,4 @@
 class GroupTalk < ApplicationRecord
-	has_many :users
-	has_many :lives
-	has_many :mymembers
+	belongs_to :user
+	belongs_to :life
 end
