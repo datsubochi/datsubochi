@@ -27,6 +27,7 @@ class LivesController < ApplicationController
 
   def show
     @join = Join.find_by(user_id: current_user.id, life_id: params[:id])
+    @talks = @live.group_talks
     
   end
   	
