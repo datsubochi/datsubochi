@@ -15,8 +15,8 @@
 	    <ul class="header-right">
 	      <li><%= link_to '新規投稿',new_mymember_path %></li>
 	      <li><%= link_to '記事一覧',mymembers_path %></li>
-	      <li>マイページ</li>
-	      <li>ログアウト</li>
+	      <li><%= link_to 'マイページ',user_path(current_user.id) %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
 
 	    </ul>
 	  </div>
