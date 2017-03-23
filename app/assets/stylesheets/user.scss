@@ -1,3 +1,29 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top-sentences{
+	text-align: center;
+	margin-top: 65px;
+}
+.back{
+  width:100%;
+  height:100%;
+  background-image: url(datsubochi-1.jpg);
+  background-size: cover;
+  color: lightgray;
+  line-height: 50px;
+}
+
+.strong{
+	color:yellow;
+}
+
+.top-botton{
+	background-color:#A8A4A4;
+	margin-left: 10px;
+	border-radius: 25px;
+	
+
+}
+	

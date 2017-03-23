@@ -1,4 +1,4 @@
 <h1>所属コミュニティ一覧</h1>
 	<% @joins.each do |join| %>
-		<%= Live.find(join.life_id).name %>
+		<%= @user.name %>
 	<% end %>	

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	layout 'userslayouts.html.erb'
     before_action :set_user,only:[:show,:edit,:update,:lives_index]
-    before_action :authenticate_user!
+    before_action :authenticate_user!,except:[:top]
     
 	def top
 	end
@@ -17,8 +17,9 @@ class UsersController < ApplicationController
     end
 
     def update
-    	if @user = User.update(current_user)
-    		redirect_to user_path(@user)
+        @user = User.find(params[:id])
+    	if @user.update(user_params)
+    		redirect_to user_path(@user.id)
     	else
     		render :edit
     	end
@@ -35,6 +36,7 @@ class UsersController < ApplicationController
 
     def joined_group
         @joins = Join.where(user_id: params[:id]).where(accepted: true)
+        @user = Life.where(life_id: current_user.id)
     end    
 
     private
@@ -43,7 +45,7 @@ class UsersController < ApplicationController
     	end
 
     	def user_params
-    		params.require(:user).permit(:name,:sex,:email,:city,:favorite_group,:favorite_member,:body,:fan_career)
+    		params.require(:user).permit(:name,:sex,:email,:city,:favorite_group,:favorite_member,:body,:fan_career,:image)
     	end
 
 end

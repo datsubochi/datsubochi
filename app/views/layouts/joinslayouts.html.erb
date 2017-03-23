@@ -16,7 +16,7 @@
 	      <li><%= link_to '新規投稿',new_life_path %></li>
 	      <li><%= link_to '募集一覧',lives_path %></li>
 	      <li><%= link_to 'マイページ',user_path(current_user.id) %></li>
-		  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+	      <li><%= link_to 'ログアウト',destroy_user_session_path %></li>
 
 	    </ul>
 	  </div>
@@ -24,16 +24,6 @@
   		<%= yield %>
   </body>	
 </html>
-
-
-
-
-
-
-
-
-
-
 
 
 

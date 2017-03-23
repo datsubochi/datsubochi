@@ -1,5 +1,6 @@
 <%= form_for(@user) do |f| %>
-
+	<%= f.label :image %>
+	<%= f.file_field :image %> 
 	<h3>氏名</h3>
 		<%= f.text_field :name %>
 
