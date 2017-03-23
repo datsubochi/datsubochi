@@ -1,9 +1,10 @@
 <h1>記事一覧</h1>
 <% @mymembers.each do |mymember| %>
 
-<p><%= mymember.title %></p>
+<p><%= link_to mymember.title, mymember_path(mymember) %></p>
 <p><%= mymember.image %></p>
 <p><%= mymember.body %></p>
 <p></p>
+
 <% end %>
 <%= paginate @mymembers %>
