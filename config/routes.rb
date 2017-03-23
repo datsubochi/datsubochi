@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'users#top'
   get '/system' => 'users#system'
 
-  resources :users ,only:[:edit,:updata,:show,:index] do
+  resources :users ,only:[:edit,:update,:show,:index] do
   	get :lives_index ,on: :member
   	get :joined_group ,on: :member
   end

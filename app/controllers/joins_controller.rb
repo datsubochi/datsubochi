@@ -2,7 +2,7 @@ class JoinsController < ApplicationController
 	before_action :check_founder?,only: [:destroy,:accept,:waiting]
 	def create
 		@join = Join.create(user_id: current_user.id, life_id: params[:life_id])
-		
+		redirect_to life_joins_path(@user.id)
 	end
 	
 	def destroy

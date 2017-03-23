@@ -5,3 +5,12 @@
 <% end %>		
 
 
+<P>ニックネーム：<%= @user.name %></P>
+<p>性別：<%= @user.sex %></p>
+<p>居住地：<%= @user.city %></p>
+<p>好きなグループ：<%= @user.favorite_group %></p>
+<p>推しメン：<%= @user.favorite_member %></p>
+<p>ファン歴：<%= @user.fan_career %>ヶ月</p>
+<p>みんなにひとこと：<%= @user.body %></p>
+
+<botton><%= link_to "プロフィール編集", edit_user_path(@user.id) %></botton> %>
