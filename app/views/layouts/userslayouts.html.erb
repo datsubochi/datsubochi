@@ -3,7 +3,6 @@
   <head>
     <title>Datsubochi</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,20 +12,21 @@
 	  <div class="container">
 	    <div class="logo">脱ぼっち☆彡</div>
 	    <ul class="header-right">
-	      
+	
+  <% if user_signed_in? %>
       
-  <li><%= link_to "作成ライブ一覧",lives_index_user_path(current_user) %></li>
-  <li><%= link_to "所属コミュニティ",joined_group_user_path(current_user) %></li>
+  <li><%= link_to "作成ライブ一覧",lives_index_user_path(current_user.id) %></li>
+  <li><%= link_to "所属コミュニティ",joined_group_user_path(current_user.id) %></li>
   <li><%= link_to "脱ぼっちトリセツ",system_path %></li>
   <li><%= link_to "ライブ募集",lives_path %></li>
   <li><%= link_to "推しメン仲間募集",mymembers_path %></li>
   <li><%= link_to "ログアウト",destroy_user_session_path,method: :delete %></li>
 
-
+<% end %>
 	    </ul>
 	  </div>
 </header>
-  		<%= yield %>
+  		<div class="font"><%= yield %></div>
   </body>	
 </html>
 

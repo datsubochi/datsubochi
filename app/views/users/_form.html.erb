@@ -1,5 +1,6 @@
 <%= form_for(@user) do |f| %>
-
+	<%= f.label :image %>
+	<%= f.file_field :image %> 
 	<h3>氏名</h3>
 		<%= f.text_field :name %>
 
@@ -11,17 +12,17 @@
   　　	<label><%= f.radio_button :sex, "2" %>女</label>
 	
 	<h3>好きなグループ</h3>
-		<%= f.text_field :favorite_group %>
+		<p>好きなグループは、<%= f.text_field :favorite_group %>です。</p>
 
 	<h3>推しメン</h3>
-		<%= f.text_field :favorite_member %>
+		<p>推しメンは、<%= f.text_field :favorite_member %>です。</p>
 
 	<h3>ファン歴</h3>
-		<%= f.number_field :fan_career %>
+		<p>ファン始めて<%= f.number_field :fan_career %>ヶ月です。</p>
 
 	<h3>メッセージ<h3>
-		<%= f.text_area :body %>	
+		みんなにひとこと：<%= f.text_area :body %>	
 
-<%= f.submit "変更" %>
+<%= f.submit %>
 
 <% end %>
