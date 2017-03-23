@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources  :mymembers
 
   resources :lives do
-  	resources :joins,only: [:create,:destroy] do
+  	resource :joins,only: [:create,:destroy] do
   		collection do 
   			get :waiting
   			get :accepted
