@@ -9,13 +9,32 @@
   </head>
 
   <body>
-  <% if user_signed_in? %>
-  	Logged in as <%= current_user.email %>
-  	<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  	<% else %>
-  	<%= link_to "新規投稿", new_user_registration_path %>
-  	<%= link_to "ログイン", new_user_session_path %>
-  <% end %>
+  <header>
+    <div class="header-log">
+    <% if user_signed_in? %>
+    	Logged in as <%= current_user.email %>
+    	<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    	<% else %>
+    	<%= link_to "新規投稿", new_user_registration_path %>
+    	<%= link_to "ログイン", new_user_session_path %>
+    <% end %>
+    </div>
+    <div>
+    <nav class="clearfix">
+      <ul class="menu">
+        <li class="menu-content"><a class="text-content" href="http://localhost:3000/mymembers">Comunity</a></li>
+        <li class="menu-content"><a class="text-content" href="http://localhost:3000/lives">Live</a></li>
+      </ul>
+    </nav>
+    </div>
+  </header>
+
+  <section>
   		<%= yield %>
+  </section>
+
+  <footer>
+    
+  </footer>
   </body>	
 </html>

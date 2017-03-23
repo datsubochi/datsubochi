@@ -13,6 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+*{
+  margin:0;
+  padding: 0;
+}
+
+header{
+  height: 100px;
+  width: 960px;
+  background-color:white;
+  margin: 0 auto;
+  color: blue;
+}
+
+.header-log{
+  text-align: right;
+}
+  
+}
+
 .navbar {
   height: 65px;
   width: 100%;
@@ -34,7 +54,7 @@
 }
 
 .header-right {
-  float: right;
+  float: left;
   margin: 0 auto;
 }
 
@@ -42,4 +62,21 @@
   color: white;
   display: block;
   text-decoration: none;
+}
+
+.menu{
+  height: 50px;
+  text-align: center;
+  background-color: blue;
+
+}
+
+.menu-content{
+  display: inline;
+  color: white;
+}
+
+.text-content{
+  text-decoration: none;
+  color: white;
 }
