@@ -1,3 +1,53 @@
 // Place all the styles related to the lives controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.lives-container{
+	width: 100%;
+	padding-top: 65px;
+	margin: 0 auto;
+	background: url(datsubochi-6.jpg);
+}
+
+.lives-height{
+	height: 2000px;
+}
+.lives-menu{
+	width: 100%;
+}
+.lives-item{
+	width: 21%;
+	display: inline-block;
+	margin-left: 17px;
+	padding-top: 28px;
+	text-align: center;
+}
+#logo {
+ 	float: left;
+ 	width:61px;
+ 	height: 61px;
+ 	border: solid 3px black;
+}
+.item-line{
+	text-decoration: none;
+}	
+
+.lives-article{
+	width: 620px;
+	line-height: 50px;
+	margin: 0 auto;
+	text-align: center;
+	border: solid 5px #4D7DF8;
+	padding-top: 30px;
+	font-weight: bold;
+	font-size: 15px;
+}
+.lives-title{
+	text-align: center;
+}
+.lives-body{
+	width: 400px;
+	height: 100%;
+	background-color: white;
+	border:solid 1px lightgray;
+	margin: 0 auto;
+}

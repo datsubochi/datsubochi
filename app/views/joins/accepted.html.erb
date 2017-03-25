@@ -1,5 +1,13 @@
-<h1>メンバー一覧</h1>
+<div class="joins-container">
 
-<% @joins.each do |join| %>
-	<li><%= link_to join.user.name,user_path(join.user.id) %></li>
-<% end %>	
+
+		<h1 class="joins-title">メンバー一覧</h1>
+        <div class="joins-article">
+			<% @joins.each do |join| %>
+				<li><%= link_to join.user.name,user_path(join.user.id) %></li>
+			<% end %>	
+
+			<%= paginate @joins %>
+		</div>	
+
+</div>

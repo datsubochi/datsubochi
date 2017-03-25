@@ -1,16 +1,35 @@
-<% if @user.name.blank? %></h1>
-	<h1>あなたのマイページ</h1>
-<% else %>
-	<h1><%= @user.name %>のマイページ</h1>
-<% end %>		
+<div class="users-container">	
+	<div class="users-show-container">
 
+		
+		<% if @user.name.blank? %></h1>
+			<h1>あなたのマイページ</h1>
+		<% else %>
+			<h1><%= @user.name %>さんのマイページ</h1>
+		<% end %>		
 
-<P>ニックネーム：<%= @user.name %></P>
-<p>性別：<%= @user.sex %></p>
-<p>居住地：<%= @user.city %></p>
-<p>好きなグループ：<%= @user.favorite_group %></p>
-<p>推しメン：<%= @user.favorite_member %></p>
-<p>ファン歴：<%= @user.fan_career %>ヶ月</p>
-<p>みんなにひとこと：<%= @user.body %></p>
+        <p><%= @user.image %></p>
+        <tbody>
 
-<botton><%= link_to "プロフィール編集", edit_user_path(@user.id) %></botton> 
+		    <tr>
+		      <% if !@user.image.blank? %>
+		    　<td><%=  image_tag @user.image%></td>
+		    　<% else %>
+		    　<td><%= image_tag 'noimage.gif' %></td>
+		    　<% end %>
+		      
+		    </tr>
+ 
+  
+</tbody>
+		<p>ニックネーム：<%= @user.name %></p>
+		<p>性別：<%= @user.sex %></p>
+		<p>居住地：<%= @user.city %></p>
+		<p>好きなグループ：<%= @user.favorite_group %></p>
+		<p>推しメン：<%= @user.favorite_member %></p>
+		<p>ファン歴：<%= @user.fan_career %>ヶ月</p>
+		<p>みんなにひとこと：<%= @user.body %></p>
+
+		<botton><%= link_to "プロフィール編集", edit_user_path(@user.id) %></botton>
+	</div>	 
+</div>	

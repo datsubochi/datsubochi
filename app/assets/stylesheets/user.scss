@@ -2,28 +2,99 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.users-container{
+	width: 100%;
+	padding-top: 65px;
+	margin: 0 auto;
+}
+.users-height{
+  height: 2000px;
+}
+
+
+
 .top-sentences{
 	text-align: center;
 	margin-top: 65px;
 }
-.back{
-  width:100%;
-  height:100%;
-  background-image: url(datsubochi-1.jpg);
-  background-size: cover;
-  color: lightgray;
+.top-back{
+ 	width:100%;
+ 	height:100%;
+ 	background: url(datsubochi-2.jpg);
+ 	background-size: cover;
+ 	color: #F07023;
   line-height: 50px;
 }
 
 .strong{
-	color:yellow;
+	color:#F80734;
+	font-weight: bold;
 }
 
 .top-botton{
-	background-color:#A8A4A4;
+	background-color:#9CF987;
 	margin-left: 10px;
 	border-radius: 25px;
 	
+}
+.users-menu{
+	width: 100%;
+	}
+.users-item{
+	width: 15%;
+	display: inline-block;
+	margin-left: 5px;
+	padding-top: 28px;
+	text-align: center;
+	
+}
+#logo {
+ 	float: left;
+ 	width:61px;
+ 	height: 61px;
+ 	border: solid 3px black;
+ 
+}
+.item-line{
+	text-decoration: none;
+}
+.top-footer{
+	height: 65px;
+ 	width: 100%;
+ 	background-color:   #D9F5B1;
+}
+
+.users-show-container{
+	text-align: center;
+	font-size: 30px;
+	background: url(datsubochi-5);
+	font-family:"Comic Sans MS";
+	line-height: 70px;
+	color: #3899EB;
+}
+.users-system{
+	margin: 0 auto;
+	width: 620px;
+}
+.users-system-message{
+	border: solid 3px #3899EB;
+	padding-top: 15px;
+	color: #11282D;
+	font-weight:bold;
+	text-align: left;
+	font-size: 15px;
+	line-height: 40px;
 
 }
-	
+.devise-container{
+  width:100%;
+  height:1000px;
+  background: url(datsubochi-4.jpg);
+  background-size: cover;
+  margin-top: -190px;
+}
+.devise-sentences{
+  text-align: center;
+  padding-top: 300px;
+  color:white;
+}
