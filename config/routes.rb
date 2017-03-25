@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   	resources :group_talks,only:[:create,:destroy]
   end
 
-  post '/joins/:id/accept' => 'join#accept', as: :join_accept
+  patch '/joins/:id/accept' => 'joins#accept', as: :join_accept
   
   
   

@@ -5,7 +5,7 @@
 		<div class="joins-article">	
 			<% @joins.each do |join| %>
 				<li><%= link_to join.user.name , user_path(join.user.id) %>
-				<botton><%= link_to "承認",accepted_life_joins_path(join.id),class:'permit' %></botton>
+				<botton><%= link_to "承認",join_accept_path(join.id), method: :patch,class:'permit' %></botton>
 				<botton><%= link_to "削除", life_joins_path(join.id), method: :delete,class:'refuse' %></botton></li>
 			<% end %>	
 
