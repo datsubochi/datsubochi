@@ -1,11 +1,14 @@
-<h1>募集一覧</h1>
-<% @lives.each do |live| %>
-
-<p><%= live.title %></p>
-<p><%= live.place %></p>
-<p><%= live.date.to_s(:published_on) %></p>
-<p><%= live.body %></p>
-<p><%= link_to "詳細を見る",life_path(live.id) %></p>
-
-<% end %>
-<%= paginate @lives %>
+<div class="lives-container lives-height">
+	
+	<h1 class="lives-title">募集一覧</h1>
+	<div class="lives-article">
+		<% @lives.each do |live| %>
+		<p><%= live.title %></p>
+		<p><%= live.place %></p>
+		<p><%= live.date.to_s(:published_on) %></p>
+		<p><%= live.body %></p>
+		<p><%= link_to "詳細を見る",life_path(live.id) %></p>
+        <% end %>
+		<%= paginate @lives %>
+	</div>	
+</div>		

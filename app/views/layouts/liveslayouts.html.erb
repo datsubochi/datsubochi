@@ -10,15 +10,16 @@
 
   <body>
   <header class="navbar">
-	  <div class="container">
-	    <div class="logo">脱ぼっち☆彡</div>
-	    <ul class="header-right">
-	      <li><%= link_to '新規投稿',new_life_path %></li>
-	      <li><%= link_to '募集一覧',lives_path %></li>
-	      <li><%= link_to 'マイページ',user_path(current_user.id) %></li>
-		  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+		<div class="lives-menu">
+	    
+		    <ul class="header-right">
+		    <%= image_tag 'datsubochi-3.jpg',id: 'logo' %>
+		      <li class="lives-item"><%= link_to '新規投稿',new_life_path %></li>
+		      <li class="lives-item"><%= link_to '募集一覧',lives_path %></li>
+		      <li class="lives-item"><%= link_to 'マイページ',user_path(current_user.id) %></li>
+			  <li class="lives-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
 
-	    </ul>
+		    </ul>
 	  </div>
 	</header>
   		<%= yield %>

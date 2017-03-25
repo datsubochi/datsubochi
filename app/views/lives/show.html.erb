@@ -1,51 +1,59 @@
-<h2>title</h2>
-<li><%= @live.title %></li>
+<div class="lives-container">
+	<div class="lives-article">		
 
-<h2>place</h2>
-<li><%= @live.place %><li>
 
-<h2>date</h2>
-<li><%= @live.date %></li>
 
-<h2>extra</h2>
-<li><%= @live.body %></li>
 
-<% @talks.each do |talk| %>
-	<div class=""><%= talk.body %></div>
-<% end %>
+		<h2>タイトル</h2>
+		<li><%= @live.title %></li>
 
-<% if !@join.blank? %>
-	<% if @join.accepted  %>
-		<h2>コメントを書く</h2> 
-		<%= form_for([@live,GroupTalk.new]) do |f| %> 
-			<div > 
-				<%= f.label :body %><br /> 
-				<%= f.text_area :body %> 
-			</div> 
-			<div> 
-				<%= f.submit "送信☆彡" %> 
-			</div> 
+		<h2>会場</h2>
+		<li><%= @live.place %><li>
+
+		<h2>日時</h2>
+		<li><%= @live.date %></li>
+	
+		<h2>メッセージ</h2>
+	<div class="lives-body">
+		<li><%= @live.body %></li>
+    </div>
+		<% @talks.each do |talk| %>
+			<div class=""><%= talk.body %></div>
 		<% end %>
-	<% end %>	 
-<% end %>
+
+		<% if !@join.blank? %>
+			<% if @join.accepted  %>
+				<h2>コメントを書く</h2> 
+				<%= form_for([@live,GroupTalk.new]) do |f| %> 
+					<div > 
+						<%= f.text_area :body %> 
+					</div> 
+					<div> 
+						<%= f.submit "送信" %> 
+					</div> 
+				<% end %>
+			<% end %>	 
+		<% end %>
 
 
 
 
-<% if @live.user_id == current_user.id %>
-	<li><%=link_to "編集", edit_life_path(@live.id) %></li>
-	<li><%= link_to "削除", life_path(@live.id), method: "delete", class: "btn destroy-btn", "data-confirm" => "本当に削除しますか？" %></li>
-	<li><%= link_to "申請中一覧",waiting_life_joins_path(params[:id]) %></li>
-<% else %>
-
-	<li><% if @join.blank? %>
-			<%= link_to "コミュニティに参加する", life_joins_path(@live), method: :post %>
+		<% if @live.user_id == current_user.id %>
+			<li><%=link_to "編集", edit_life_path(@live.id) %></li>
+			<li><%= link_to "削除", life_path(@live.id), method: "delete", class: "btn destroy-btn", "data-confirm" => "本当に削除しますか？" %></li>
+			<li><%= link_to "申請中一覧",waiting_life_joins_path(params[:id]) %></li>
 		<% else %>
-			<% if @join.accepted %>
-				<%= link_to "コミュニティを退会する", life_join_path(@join.id), method: :delete %>
-			<% else %>
-		    	<li>申請中</li> 
-			<% end %>
-		<% end %>	
-	</li>
-<% end %>
+
+			<li><% if @join.blank? %>
+					<%= link_to "コミュニティに参加する", life_joins_path(@live), method: :post %>
+				<% else %>
+					<% if @join.accepted %>
+						<%= link_to "コミュニティを退会する", life_join_path(@join.id), method: :delete %>
+					<% else %>
+				    	<li>申請中</li> 
+					<% end %>
+				<% end %>	
+			</li>
+		<% end %>
+	</div>
+</div>		

@@ -10,13 +10,13 @@
 
   <body>
   <header class="navbar">
-	  <div class="container">
-	    <div class="logo">脱ぼっち☆彡</div>
+	  <div class="mymembers-menu">
 	    <ul class="header-right">
-	      <li><%= link_to '新規投稿',new_mymember_path %></li>
-	      <li><%= link_to '記事一覧',mymembers_path %></li>
-	      <li><%= link_to 'マイページ',user_path(current_user.id) %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      <%= image_tag 'datsubochi-3.jpg',id: 'logo' %>
+	      <li class="mymembers-item"><%= link_to '新規投稿',new_mymember_path %></li>
+	      <li class="mymembers-item"><%= link_to '記事一覧',mymembers_path %></li>
+	      <li class="mymembers-item"><%= link_to 'マイページ',user_path(current_user.id) %></li>
+        <li class="mymembers-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
 
 	    </ul>
 	  </div>

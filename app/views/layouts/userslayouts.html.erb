@@ -9,23 +9,25 @@
 
   <body>
   <header class="navbar">
-	  <div class="container">
-	    <ul class="header-right">
-	
+	  <div class="users-menu">
+      
+	    <ul class="header-right ">
+        
+	     <%= image_tag 'datsubochi-3.jpg',id: 'logo' %>
         <% if user_signed_in? %>
       
-          <li><%= link_to "作成ライブ一覧",lives_index_user_path(current_user.id) %></li>
-          <li><%= link_to "所属コミュニティ",joined_group_user_path(current_user.id) %></li>
-          <li><%= link_to "脱ぼっちトリセツ",system_path %></li>
-          <li><%= link_to "ライブ募集",lives_path %></li>
-          <li><%= link_to "推しメン仲間募集",mymembers_path %></li>
-          <li><%= link_to "ログアウト",destroy_user_session_path,method: :delete %></li>
+          <li class="users-item"><%= link_to "作成ライブ一覧",lives_index_user_path(current_user.id),class: 'item-line' %></li>
+          <li class="users-item"><%= link_to "所属コミュニティ",joined_group_user_path(current_user.id),class: 'item-line'%></li>
+          <li class="users-item"><%= link_to "脱ぼっちトリセツ",system_path,class: 'item-line' %></li>
+          <li class="users-item"><%= link_to "ライブ募集",lives_path,class: 'item-line' %></li>
+          <li class="users-item"><%= link_to "推しメン紹介",mymembers_path,class: 'item-line' %></li>
+          <li class="users-item"><%= link_to "ログアウト",destroy_user_session_path,method: :delete,class: 'item-line' %></li>
 
-<% end %>
+        <% end %>
 	    </ul>
 	  </div>
 </header>
-  		<div class="font"><%= yield %></div>
+  		<%= yield %>
   </body>	
 </html>
 

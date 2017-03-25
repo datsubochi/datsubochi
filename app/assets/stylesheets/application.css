@@ -24,7 +24,7 @@
 .navbar {
   height: 65px;
   width: 100%;
-  background-color: rgba(34, 49, 52, 0.9);
+  background-color:   #D9F5B1;
   top: 0;
   right: 0;
   left: 0;
@@ -32,22 +32,33 @@
   margin-bottom: 20px;
 }
 
+
+}
+
 #logo {
   float: left;
-  font-size: 27px;
-  color: #fff;
-  padding-top: 12px;
-  letter-spacing: -1px;
-  font-weight: bold;
+  width:61px;
+  height: 61px;
+  border: solid 3px black;
+ 
 }
 
 .header-right {
   float: right;
-  margin: 0 auto;
+  width: 100%;
 }
 
-.header-right a {
-  color: white;
-  display: block;
-  text-decoration: none;
+
+}
+.devise-container{
+  width:100%;
+  height:1000px;
+  background: url(datsubochi-4.jpg);
+  background-size: cover;
+  margin-top: -190px;
+}
+.devise-sentences{
+  text-align: center;
+  padding-top: 300px;
+  color:white;
 }

@@ -1,10 +1,16 @@
-<h1>記事一覧</h1>
-<% @mymembers.each do |mymember| %>
+<div class="mymembers-container mymembers-height">
+		
 
-<p><%= link_to mymember.title, mymember_path(mymember) %></p>
-<p><%= mymember.image %></p>
-<p><%= mymember.body %></p>
-<p></p>
+		<h1 class="mymembers-title">記事一覧</h1>
+		<div class="mymembers-article">	
+			<% @mymembers.each do |mymember| %>
 
-<% end %>
-<%= paginate @mymembers %>
+				<p><%= link_to mymember.title, mymember_path(mymember) %></p>
+				<p><%= mymember.image %></p>
+				<p><%= mymember.body %></p>
+				<p></p>
+
+			<% end %>
+		<%= paginate @mymembers %>
+		</div>
+</div>		
