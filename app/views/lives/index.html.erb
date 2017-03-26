@@ -7,6 +7,7 @@
 		<p><%= live.place %></p>
 		<p><%= live.date.to_s(:published_on) %></p>
 		<p><%= live.body %></p>
+		<p>作成者:<%= link_to live.user.name, user_path(live.user.id) %></p>
 		<p><%= link_to "詳細を見る",life_path(live.id) %></p>
         <% end %>
 		<%= paginate @lives %>

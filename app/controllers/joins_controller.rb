@@ -1,22 +1,25 @@
 class JoinsController < ApplicationController
 	layout 'joinslayouts.html.erb'
-	before_action :check_founder?,only: [:destroy,:accept,:waiting]
+	before_action :check_founder?,only: [:destroy,:waiting]
+	
 	def create
-		@join = Join.create(user_id: current_user.id, life_id: params[:life_id])
-		redirect_to life_joins_path(@user.id)
+		@live = Life.find(params[:life_id])
+		# binding pry
+		@join = Join.create(user_id: current_user.id, life_id: @live.id)
+		redirect_to life_path(@join.life_id)
 	end
 	
 	def destroy
 		@join = Join.find(params[:id])
 		@join.destroy
-		redirect_to waiting_life_join_path
+		redirect_to waiting_life_joins_path(@join.life_id)
 	end
 	
 	def accept
     	@join = Join.find(params[:id])
     	@join.accepted =  true
     	@join.save
-    	redirect_to waiting_life_join_path
+    	redirect_to waiting_life_joins_path(@join.life_id)
 	end	
 
 	def waiting

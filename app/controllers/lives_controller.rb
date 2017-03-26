@@ -15,7 +15,7 @@ class LivesController < ApplicationController
   	if @live.save
       Join.create(life_id: @live.id , user_id: @live.user_id,accepted: true)
 	  	redirect_to @live
-	else
+	  else
 		render :new
   	end
   end
@@ -55,7 +55,7 @@ class LivesController < ApplicationController
   	end	
 
     def life_params
-    	params.require(:life).permit(:title,:body,:date,:place)
+    	params.require(:life).permit(:title,:body,:date,:place,:user_id)
     end	
 
 end

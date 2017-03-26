@@ -1,6 +1,6 @@
 class Life < ApplicationRecord
 	 acts_as_taggable_on :tags    
-	 has_many :users  
+	 belongs_to :user 
 	 has_many :joins
 	 has_many :group_talks
 end
